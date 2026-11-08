@@ -58,6 +58,7 @@ export default async function Billing(props: { searchParams: Promise<{ status?: 
               <div className="flex justify-between"><dt>PhilHealth coverage</dt><dd>−{peso(sel.philhealth_amount)}</dd></div>
               {sel.paid > 0 && <div className="flex justify-between"><dt>Paid</dt><dd>−{peso(sel.paid)}</dd></div>}
               <div className="flex justify-between text-base font-bold"><dt>Balance due</dt><dd>{peso(sel.balance_due)}</dd></div></dl>
+            <a href={`/billing/${sel.id}/receipt`} target="_blank" className="mt-4 inline-block text-sm font-semibold text-brand-600">Print statement ↗</a>
             {sel.balance_due > 0 && (
               <form action={recordPayment} className="mt-4 flex gap-2 border-t border-slate-100 pt-4"><input type="hidden" name="invoice_id" value={sel.id} />
                 <input name="amount" type="number" step="0.01" max={sel.balance_due} defaultValue={sel.balance_due} className="input" />
