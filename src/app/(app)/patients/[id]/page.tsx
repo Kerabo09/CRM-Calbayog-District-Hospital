@@ -25,7 +25,7 @@ export default async function PatientProfile(props: { params: Promise<{ id: stri
       <div className="mb-4 flex flex-wrap items-start justify-between gap-3">
         <div><h1 className="text-2xl font-bold">{fullName(p)}</h1>
           <p className="mt-1 text-sm text-ink-600">{p.hospital_id} · {p.sex} · {age(p.date_of_birth)} years old · <Badge>{p.status}</Badge></p></div>
-        <div className="flex gap-2"><Link href="/records/new" className="btn-primary">+ New encounter</Link></div>
+        <div className="flex gap-2"><Link href={`/vitals?patient=${p.id}`} className="btn-ghost">Record vitals</Link><Link href="/records/new" className="btn-primary">+ New encounter</Link></div>
       </div>
       <div className="grid gap-4 lg:grid-cols-[300px_1fr]">
         <div className="card p-5"><h3 className="mb-4 font-semibold">Patient information</h3>
