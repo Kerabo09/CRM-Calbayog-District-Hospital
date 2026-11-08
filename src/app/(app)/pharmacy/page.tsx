@@ -21,7 +21,7 @@ export default async function Pharmacy(props: { searchParams: Promise<{ q?: stri
 
   return (
     <div className="mx-auto max-w-6xl">
-      <PageHeader title="Pharmacy" sub="Monitor medicines, manage stock, and keep prescriptions moving."><Link href="/pharmacy/stock/new" className="btn-primary">+ Add stock</Link></PageHeader>
+      <PageHeader title="Pharmacy" sub="Monitor medicines, manage stock, and keep prescriptions moving."><Link href="/pharmacy/prescriptions" className="btn-ghost">Prescriptions</Link><Link href="/pharmacy/stock/new" className="btn-primary">+ Add stock</Link></PageHeader>
       {searchParams.error && <p className="mb-4 rounded-xl bg-red-50 p-3 text-sm text-red-700">{searchParams.error}</p>}
       <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
         <Stat label="Medicine inventory" value={all?.length ?? 0} hint="Active medicines and supplies" />
