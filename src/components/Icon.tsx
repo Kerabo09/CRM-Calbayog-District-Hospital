@@ -13,6 +13,7 @@ const P: Record<string, string> = {
   bed: "M3 18V6M3 14h18v4M21 14v-2a3 3 0 00-3-3h-7v5",
   out: "M9 21H5V3h4M16 17l5-5-5-5M21 12H9",
   shield: "M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z",
+  alert: "M12 3l10 18H2zM12 10v5M12 18h.01",
   heart: "M12 20s-7-4.6-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.4-7 10-7 10z",
 };
 export default function Icon({ name, className = "h-5 w-5" }: { name: keyof typeof P | string; className?: string }) {

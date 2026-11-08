@@ -28,11 +28,11 @@ const TONES: Record<string, string> = {
   red: "bg-red-50 text-red-700", gray: "bg-slate-100 text-slate-600",
 };
 const MAP: Record<string, string> = {
-  Completed: "green", Paid: "green", Signed: "green", Final: "green", "In stock": "green", "On duty": "green", Dispensed: "green",
-  Meeting: "blue", "In consultation": "blue", Admitted: "blue", Scheduled: "blue",
-  Waiting: "amber", Pending: "amber", Draft: "amber", "Low stock": "amber", Outpatient: "amber",
-  Overdue: "red", "Out of stock": "red", Cancelled: "red", "No show": "red",
-  "Off duty": "gray", "On leave": "gray", Discharged: "gray",
+  Completed: "green", Approved: "green", Paid: "green", Signed: "green", Final: "green", "In stock": "green", "On duty": "green", Dispensed: "green",
+  Meeting: "blue", Filed: "blue", "In treatment": "blue", "In consultation": "blue", Admitted: "blue", Scheduled: "blue",
+  Waiting: "amber", "Under review": "amber", Pending: "amber", Draft: "amber", "Low stock": "amber", Outpatient: "amber",
+  Overdue: "red", Denied: "red", "Out of stock": "red", Cancelled: "red", "No show": "red",
+  "Off duty": "gray", "On leave": "gray", Discharged: "gray", Transferred: "gray",
 };
 export function Badge({ children }: { children: string }) {
   return <span className={`inline-flex rounded-full px-2.5 py-1 text-xs font-medium ${TONES[MAP[children] ?? "gray"]}`}>● {children}</span>;

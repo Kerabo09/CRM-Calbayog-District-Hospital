@@ -6,9 +6,14 @@ import Icon from "./Icon";
 const NAV = [
   { href: "/", label: "Home", icon: "home" },
   { href: "/patients", label: "Patients", icon: "users" },
+  { href: "/admissions", label: "Admissions", icon: "bed" },
+  { href: "/emergency", label: "Emergency", icon: "alert" },
+  { href: "/vitals", label: "Vital signs", icon: "heart" },
   { href: "/appointments", label: "Appointments", icon: "calendar" },
   { href: "/records", label: "Records", icon: "file" },
+  { href: "/diagnostics", label: "Lab & imaging", icon: "file" },
   { href: "/billing", label: "Billing", icon: "card" },
+  { href: "/philhealth", label: "PhilHealth", icon: "shield" },
   { href: "/pharmacy", label: "Pharmacy", icon: "pill" },
   { href: "/staff", label: "Staff", icon: "team" },
 ];
@@ -26,7 +31,7 @@ export default function Sidebar() {
   return (
     <aside className="hidden w-60 shrink-0 flex-col border-r border-slate-100 bg-white p-3 md:flex">
       <div className="px-3 pb-2 pt-4 text-[11px] font-semibold tracking-wider text-ink-400">WORKSPACE</div>
-      <nav className="space-y-1">{NAV.map(item)}</nav>
+      <nav className="space-y-1 overflow-y-auto">{NAV.map(item)}</nav>
       <div className="mt-auto space-y-3">
         <div className="rounded-xl bg-brand-50 p-4 text-sm">
           <Icon name="heart" className="mb-2 h-5 w-5 text-brand-600" />
